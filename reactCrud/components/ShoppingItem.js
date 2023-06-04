@@ -18,6 +18,7 @@ import { MaterialIcons, AntDesign, FontAwesome } from "@expo/vector-icons";
 import { useEffect, useState } from "react";
 import { db, collection, addDoc, deleteDoc, doc } from "../firebase/index";
 import { getDocs, onSnapshot, orderBy, query, where } from "firebase/firestore";
+import { LinearGradient } from "expo-linear-gradient";
 export default function List({ navigation }) {
   const [title, setTitle] = useState("");
   const [shopList, setShopList] = useState([]);
@@ -122,7 +123,7 @@ export default function List({ navigation }) {
           alignItems: "center",
           backgroundColor: "#f0f2f5",
           borderRadius: 10,
-          marginHorizontal: 20,
+          
         }}
       >
         <TextInput
@@ -140,15 +141,28 @@ export default function List({ navigation }) {
       <FlatList
         data={searchItemData.length ? searchItemData : shopList}
         renderItem={({ item }) => (
-          <View>
-            <View
+          <LinearGradient
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 0 }}
+          colors={["#9c15c1", "#52dffb"]}
+          style={{
+            width: "100%",
+            flexDirection: "row",
+            marginTop: 20,
+            padding: 20,
+            borderRadius: 15,
+          }}
+        >
+            {/* <View
               style={{
+                backgroundColor: "#44d198",
                 width: "100%",
                 flexDirection: "row",
                 marginTop: 20,
                 padding: 20,
+                borderRadius: 15,
               }}
-            >
+            > */}
               <Text
                 style={{
                   color: "black",
@@ -175,13 +189,13 @@ export default function List({ navigation }) {
                   <AntDesign name="edit" size={24} color="black" />
                 </TouchableOpacity>
               </View>
-            </View>
-          </View>
+            {/* </View> */}
+          </LinearGradient>
         )}
       />
 
       <TextInput
-        placeholder="Enter an item"
+        placeholder="Input an item"
         style={styles.input}
         value={title}
         onChangeText={(text) => setTitle(text)}
@@ -229,7 +243,7 @@ const styles = StyleSheet.create({
   },
   search: {
     backgroundColor: "#f0f2f5",
-    padding: 10,
+     padding: 10,
 
     fontSize: 17,
     width: "80%",
@@ -243,7 +257,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 10,
-    marginBottom: 50,
+    marginBottom: 25,
   },
   buttonText:{
     fontSize: 17,

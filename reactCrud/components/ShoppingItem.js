@@ -11,6 +11,7 @@ import {
   Button,
   TouchableOpacity,
   ToastAndroid,
+  ImageBackground
 } from "react-native";
 
 import { MaterialIcons, AntDesign, FontAwesome } from "@expo/vector-icons";
@@ -106,10 +107,10 @@ export default function List({ navigation }) {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <ImageBackground source={require('../assets/back.png')} style={styles.container}>
       <View style={styles.header}>
         {/*heading */}
-        <Text style={styles.heading}>Shopping List</Text>
+        <Text style={styles.heading}>E-SHABU</Text>
         {/*no of shopping items */}
         <Text style={styles.noOfItems}>{shopList.length}</Text>
       </View>
@@ -189,7 +190,7 @@ export default function List({ navigation }) {
       <Pressable style={styles.button} onPress={addShoppingItem}>
       <Text style={styles.buttonText}>Add</Text>
       </Pressable>
-    </SafeAreaView>
+    </ImageBackground>
   );
 }
 

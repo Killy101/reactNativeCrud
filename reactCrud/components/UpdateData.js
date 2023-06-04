@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput, ToastAndroid,Pressable , Alert} from "react-native";
+import { StyleSheet, Text, View, TextInput, ToastAndroid,Pressable , Alert, ImageBackground} from "react-native";
 import { db, doc, updateDoc } from "../firebase/index";
 import { useEffect, useState } from "react";
 export default function UpdateData({ route, navigation }) {
@@ -20,7 +20,7 @@ export default function UpdateData({ route, navigation }) {
     });
   };
   return (
-    <View>
+    <ImageBackground source={require('../assets/back.png')}>
       <Text style={styles.text1}>Item Name: </Text>
       <Text style={styles.text2}>{route.params.title}</Text>
       <TextInput
@@ -31,14 +31,14 @@ export default function UpdateData({ route, navigation }) {
         onSubmitEditing={() => updateData(route.params.id)}
       />
       
-    </View>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "",
   },
   header: {
     flexDirection: "row",

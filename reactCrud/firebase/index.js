@@ -6,12 +6,12 @@ import { getFirestore,collection,addDoc,getDocs,doc,deleteDoc,updateDoc } from "
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCive-iBl0SAzjdX0cfawoJfUbaV9JzEnQ",
-  authDomain: "ikawbahala-69ee3.firebaseapp.com",
-  projectId: "ikawbahala-69ee3",
-  storageBucket: "ikawbahala-69ee3.appspot.com",
-  messagingSenderId: "915861592997",
-  appId: "1:915861592997:web:97dd3a5f33b4c73f0d264c"
+  apiKey: "AIzaSyB1V7YlTbO39LmJaEYxU7jxTF3hG3qDEm8",
+  authDomain: "tarungaselect.firebaseapp.com",
+  projectId: "tarungaselect",
+  storageBucket: "tarungaselect.appspot.com",
+  messagingSenderId: "61989142849",
+  appId: "1:61989142849:web:69aede6d3ce552a5c4a1c0"
 };
 
 // Initialize Firebase

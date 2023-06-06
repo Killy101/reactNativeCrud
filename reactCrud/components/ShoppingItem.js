@@ -45,7 +45,7 @@ export default function List({ navigation }) {
   }, [search]);
 
   //Add data
-  const addShoppingItem = async () => {
+  const Item = async () => {
     if (title == "") {
       alert("Item is empty");
     } else {
@@ -123,7 +123,7 @@ export default function List({ navigation }) {
           alignItems: "center",
           backgroundColor: "#f0f2f5",
           borderRadius: 10,
-          
+          paddingLeft: 20,
         }}
       >
         <TextInput
@@ -134,7 +134,7 @@ export default function List({ navigation }) {
         />
         {/* When click will search the Item*/}
         <TouchableOpacity onPress={() => searchItem()}>
-          <FontAwesome name="search" size={24} color="black" />
+          <FontAwesome name="search"  size={25} color="pink" />
         </TouchableOpacity>
       </View>
 
@@ -194,16 +194,21 @@ export default function List({ navigation }) {
         )}
       />
 
+  
+
+      <View style={{flexDirection: "row", justifyContent: 'space-between'}}>
+
       <TextInput
         placeholder="Input an item"
         style={styles.input}
         value={title}
         onChangeText={(text) => setTitle(text)}
-        onSubmitEditing={() => addShoppingItem()}
+        onSubmitEditing={() => Item()}
       />
-      <Pressable style={styles.button} onPress={addShoppingItem}>
+      <Pressable style={styles.button} onPress={Item}>
       <Text style={styles.buttonText}>Add</Text>
       </Pressable>
+      </View>
     </ImageBackground>
   );
 }
@@ -212,8 +217,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    padding: 10,
-    margin: 5,
+    padding: 20,
   },
   header: {
     flexDirection: "row",
@@ -225,19 +229,23 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   heading: {
+    marginTop: 20,
     fontSize: 30,
     fontWeight: 500,
     flex: 1,
+    color: 'violet',
   },
+  marginTop: 20,
   noOfItems: {
     fontSize: 30,
     fontWeight: 500,
+    color: 'pink',
   },
   input: {
     backgroundColor: "#f0f2f5",
     padding: 10,
     fontSize: 17,
-    width: "80%",
+    width: "75%",
     alignSelf: "center",
     borderRadius: 10,       
   },
@@ -250,18 +258,20 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   button:{
-    backgroundColor: "#528fcc",
-    padding: 10,
-    width: "90%",
+    backgroundColor: "#0f7fb8",
+    padding: 15,
+    marginTop: 20,
+    width: "20%",
     alignSelf: "center",
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 10,
-    marginBottom: 25,
+    marginBottom: 15,
+   
   },
   buttonText:{
     fontSize: 17,
-    color: "#000",
+    color: 'white',
     
   }
 });

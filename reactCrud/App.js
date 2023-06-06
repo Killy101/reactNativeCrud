@@ -9,8 +9,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="ShoppingItem">
-        <Stack.Screen name="ShoppingItem" component={ShoppingItem} />
-        <Stack.Screen name="UpdateData" component={UpdateData} />
+        <Stack.Screen name="ShoppingItem" component={ShoppingItem} options={{headerShown: false}}/>
+        <Stack.Screen name="UpdateData"  component={UpdateData} options={{headerShown: false}} />
       </Stack.Navigator>
     </NavigationContainer>
   );
